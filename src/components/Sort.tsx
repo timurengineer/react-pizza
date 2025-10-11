@@ -6,7 +6,7 @@ function Sort() {
 	const list = ['популярности', 'цене', 'алфавиту'];
 	const sortName = list[selected];
 
-	const onclickListItem = i => {
+	const onclickListItem = (i: number) => {
 		setSelected(i);
 		setOpen(false);
 	};
