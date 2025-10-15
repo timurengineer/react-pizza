@@ -20,9 +20,10 @@ function Home() {
 			.finally(() => {
 				setIsLoading(false);
 			});
+		window.scrollTo(0, 0);
 	}, []);
 	return (
-		<>
+		<div className='container'>
 			<div className='content__top'>
 				<Categories />
 				<Sort />
@@ -33,7 +34,7 @@ function Home() {
 					? [...new Array(8)].map((_, index) => <Skeleton key={index} />)
 					: items.map(pizza => <PizzaBlock key={pizza.id} {...pizza} />)}
 			</div>
-		</>
+		</div>
 	);
 }
 
