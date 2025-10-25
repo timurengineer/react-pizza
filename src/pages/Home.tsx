@@ -1,20 +1,26 @@
-import { useEffect, useState } from 'react';
-
+import { useContext, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { SearchContext } from '../App';
 import Categories from '../components/Categories';
 import Pagination from '../components/Pagination';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Sort from '../components/Sort';
+import { setCategoryId } from '../redux/slices/filterSlice';
 
-function Home({ searchValue }) {
+function Home() {
+	const dispatch = useDispatch();
+	const categoryId = useSelector((state: any) => state.filter.categoryId);
+	const sortType = useSelector((state: any) => state.filter.sort.sortProperty);
+
+	const { searchValue } = useContext(SearchContext);
 	const [items, setItems] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const [categoryId, setCategoryId] = useState(0);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [sortType, setSortType] = useState({
-		name: 'популярности',
-		sortProperty: 'rating',
-	});
+
+	const onChangeCategory = id => {
+		dispatch(setCategoryId(id));
+	};
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -22,7 +28,7 @@ function Home({ searchValue }) {
 		const category = categoryId > 0 ? `category=${categoryId}` : '';
 		const search = searchValue ? `&search=${searchValue}` : '';
 		fetch(
-			`https://68ea4faef1eeb3f856e6e022.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortType.sortProperty}&order=desc${search}`
+			`https://68ea4faef1eeb3f856e6e022.mockapi.io/items?page=${currentPage}&limit=4&${category}&sortBy=${sortType}&order=desc${search}`
 		)
 			.then(response => {
 				return response.json();
@@ -34,16 +40,16 @@ function Home({ searchValue }) {
 				setIsLoading(false);
 			});
 		window.scrollTo(0, 0);
-	}, [categoryId, sortType, searchValue, currentPage]);
+	}, [categoryId, searchValue, currentPage, sortType]);
 
 	return (
 		<div className='container'>
 			<div className='content__top'>
 				<Categories
 					value={categoryId}
-					onChangeCategory={i => setCategoryId(i)}
+					onChangeCategory={i => onChangeCategory(i)}
 				/>
-				<Sort value={sortType} onChangeSort={i => setSortType(i)} />
+				<Sort />
 			</div>
 			<h2 className='content__title'>Все пиццы</h2>
 			<div className='content__items'>
