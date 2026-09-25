@@ -1,0 +1,130 @@
+.my-orders {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+.my-orders__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.my-orders__top h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.my-orders__back {
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.my-orders__back:hover {
+  background: #f7f7f7;
+}
+
+.my-orders__status {
+  color: #6b6b6b;
+  padding: 20px 0;
+}
+
+.my-orders__empty {
+  text-align: center;
+  padding: 60px 0;
+  color: #6b6b6b;
+}
+
+.my-orders__empty .my-orders__back {
+  margin-top: 16px;
+}
+
+.my-orders__card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.my-orders__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.my-orders__status-pill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.my-orders__status-pill.is-pending {
+  background: #fff4e5;
+  color: #b26a00;
+}
+
+.my-orders__status-pill.is-delivered {
+  background: #e6f7ec;
+  color: #1a7a3f;
+}
+
+.my-orders__status-pill.is-cancelled {
+  background: #fdeaea;
+  color: #c92a2a;
+}
+
+.my-orders__date {
+  font-size: 12px;
+  color: #9c9c9c;
+}
+
+.my-orders__items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: #4b4b4b;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.my-orders__card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.my-orders__total {
+  font-weight: 700;
+}
+
+.my-orders__cancel {
+  border: 1px solid #e03131;
+  background: #fff;
+  color: #e03131;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.my-orders__cancel:hover:not(:disabled) {
+  background: #fdeaea;
+}
+
+.my-orders__cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

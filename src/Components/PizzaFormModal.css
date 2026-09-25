@@ -1,0 +1,141 @@
+.pizza-form-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.pizza-form-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  margin: auto;
+}
+
+.pizza-form-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #9c9c9c;
+}
+
+.pizza-form-modal__close:hover {
+  color: #1f1f1f;
+}
+
+.pizza-form-modal__title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 20px;
+}
+
+.pizza-form-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pizza-form-modal__row {
+  display: flex;
+  gap: 12px;
+}
+
+.pizza-form-modal__row .pizza-form-modal__field {
+  flex: 1;
+}
+
+.pizza-form-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #4b4b4b;
+}
+
+.pizza-form-modal__field input,
+.pizza-form-modal__field select {
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+  font-family: inherit;
+}
+
+.pizza-form-modal__field input:focus,
+.pizza-form-modal__field select:focus {
+  border-color: #fc6d3f;
+}
+
+.pizza-form-modal__preview {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+.pizza-form-modal__pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pizza-form-modal__pill {
+  border: 1px solid #e2e2e2;
+  background: #fff;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pizza-form-modal__pill.is-active {
+  background: #fc6d3f;
+  border-color: #fc6d3f;
+  color: #fff;
+}
+
+.pizza-form-modal__error {
+  color: #e03131;
+  font-size: 13px;
+  margin: 0;
+}
+
+.pizza-form-modal__submit {
+  margin-top: 8px;
+  border: none;
+  background: #fc6d3f;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.pizza-form-modal__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pizza-form-modal__submit:not(:disabled):hover {
+  opacity: 0.9;
+}

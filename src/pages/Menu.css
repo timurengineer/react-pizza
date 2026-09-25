@@ -1,0 +1,106 @@
+.menu-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+.pizza-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pizza-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pizza-tabs__item {
+  border: none;
+  background: #f4f4f4;
+  color: #4b4b4b;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.pizza-tabs__item:hover {
+  background: #ececec;
+}
+
+.pizza-tabs__item.is-active {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.pizza-sort {
+  position: relative;
+  font-size: 14px;
+  color: #4b4b4b;
+}
+
+.pizza-sort__trigger {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #4b4b4b;
+}
+
+.pizza-sort__trigger span {
+  color: #fc6d3f;
+  border-bottom: 1px dashed #fc6d3f;
+}
+
+.pizza-sort__menu {
+  position: absolute;
+  right: 0;
+  top: 28px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  min-width: 160px;
+  z-index: 10;
+}
+
+.pizza-sort__menu li button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #4b4b4b;
+}
+
+.pizza-sort__menu li button:hover {
+  background: #f7f7f7;
+}
+
+.pizza-sort__menu li button.is-active {
+  color: #fc6d3f;
+  font-weight: 600;
+}
+
+.pizza-section-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 24px;
+}
+
+.pizza-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 32px;
+}
